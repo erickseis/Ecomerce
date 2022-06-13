@@ -1,0 +1,252 @@
+/*-------------GOOGLE FONT----------------*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+:root{
+    --first-color: hsl(354, 78%, 60%);
+    --button-color: hsl(0, 0%, 17%);
+    --button-color-alt: hsl(0, 0%, 21%);
+    --card-color: hsl(0, 0%, 90%);
+    --title-color: hsl(0, 0%, 15%);
+    --text-color: hsl(0, 0%, 35%);
+    --text-color-light: hsl(0, 0%, 55%);
+    --body-color: hsl(206, 4%, 97%);
+    --container-color: #fff;
+    --border-color: hsl(0, 0%, 94%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;;
+}
+
+
+nav{
+    display: flex;
+    color: #FFFFFF;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1.25rem;
+    height: 60px;
+    margin-bottom: 1.5rem;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+nav>p{
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    text-align: left;
+    flex-direction: column;
+    margin-right: auto;
+}
+
+
+
+.nav-logo{
+    height: 45px;
+}
+
+nav>label{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    align-items: center;
+    gap: 1rem;
+}
+.moon{
+    height: 25px;
+}
+.shopping{
+    height: 25px;
+}
+.menu{
+            height: 25px;
+    }
+
+
+
+nav >ul :hover{
+color: var(--first-color);
+    }
+
+
+input#menu-hamburguesa{
+    visibility: hidden;
+
+   }
+
+input#menu-hamburguesa ~ ul{
+
+    background-color: var(--black);
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    margin-right: 100%;
+    height: calc( 100vh - 60px );
+    top: 60px;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    display: none;
+    z-index: 30;
+}
+
+  input#menu-hamburguesa:checked ~ ul{
+    display: flex;
+}
+
+
+  header{
+    background-color: white;
+    position: relative;
+           }
+
+
+.contenedor1{
+    padding-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.imagen1>img{
+    height: 250px;
+    right: 100%;
+    float: right;
+    padding-right: 2rem;
+    background-color: var(--first-color);
+}
+.hijo1>h1{
+    padding-left: 2rem;
+    padding-top: 2rem;
+    display: inline-block;
+}
+.hijo1>p2{
+    
+    display: inline-block;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    margin-left: 1rem;
+    color: var(--first-color);
+    padding-bottom: 1rem;
+}
+
+.hijo1>p{
+    padding-left: 2rem;
+margin-right: 1rem;
+}
+
+
+
+
+.boton-restar{
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    border: transparent;
+    background-color: var(--text-color);
+    display: inline-block;
+    margin-left: 2rem;
+}
+.boton-sumar{
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 25px;
+    border: transparent;
+    background-color: var(--title-color);
+    display: inline-block;
+    margin-left: .5rem;
+}
+
+.seccion2-submenu{
+    position: relative;
+    height: 200px;
+}
+
+.menu2>ul>li{
+    position: relative;
+    height: 35px;
+    display: inline-block;
+    border-right: 1px solid black;    
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-90%, -50%);
+    margin-top: 5rem;
+    margin-right: 1rem;
+    padding-right: 2rem;
+
+
+}
+
+
+
+
+
+
+
+/*
+    COLORES:
+
+    --first-color: hsl(354, 78%, 60%);
+    --button-color: hsl(0, 0%, 17%);
+    --button-color-alt: hsl(0, 0%, 21%);
+    --card-color: hsl(0, 0%, 90%);
+    --title-color: hsl(0, 0%, 15%);
+    --text-color: hsl(0, 0%, 35%);
+    --text-color-light: hsl(0, 0%, 55%);
+    --body-color: hsl(206, 4%, 97%);
+    --container-color: #fff;
+    --border-color: hsl(0, 0%, 94%);
+
+
+    COLORES DARK MODE:
+
+    --first-color: hsl(182, 53%, 74%);
+    --button-color: hsl(246, 16%, 12%);
+    --button-color-alt: hsl(0, 0%, 28%);
+    --card-color: hsla(246, 16%, 5%, .5);
+    --title-color: hsl(0, 0%, 95%);
+    --text-color: hsl(0, 0%, 75%);
+    --body-color: hsl(249, 19%, 14%);
+    --container-color: hsl(246, 16%, 12%);
+    --border-color: hsl(0, 0%, 20%);
+*/
+
+
+
+
+
+
+
+
+
+@media screen and ( min-width:780px ) {
+
+    nav label{
+        position: absolute;
+        right: 1rem;
+     }
+ 
+     input#menu-hamburguesa ~ ul{
+         position: static;
+         background-color: transparent;
+         display: flex;
+         flex-direction: row;
+         height: auto;
+         justify-content: flex-end;
+     }
+ }
