@@ -22,8 +22,8 @@
            <label for="menu-hamburguesa">
                <img class="moon" src="./assets/images/moon.png" alt="">
                
-               <div>
-               <img  class="shopping" src="./assets/images/shopping-bag.png" alt=""> 
+               <div class="cart">
+               <img  class="shopping" id="shopping-cart-icon" src="./assets/images/shopping-bag.png" alt=""> 
                <span class="cart-count" id="cart-count">0</span>
             </div>
 
@@ -141,6 +141,16 @@
         <span class="footer__copy">Todos los derechos reservados</span>
       </footer>
     
+      <div class="shopping-cart-overlay">
+        <div class="selected-products-list">
+            <i class="bx bx-x bx-md cart-close" id="cart-close"></i>
+            <div class="empty-state">
+                <img src="./assets/images/empty-cart.png" alt="">
+                <h5>Aun no has agregado ningun producto a tu carrito</h5>
+            </div>
+        </div>
+    </div>
+
 
 
     <script src="./assets/js/js.js"></script>
