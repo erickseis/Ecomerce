@@ -407,6 +407,27 @@ margin-right: 1rem;
     max-width: 250px;
 }
 
+.products-container{
+    grid-template-columns: 200px;
+    gap: 2rem;
+    justify-content: center;
+}
+
+
+
+.product-card{
+   
+    background-color: hsl(0, 0%, 90%);
+    border-radius: 0.5rem 0.5rem 0 0;
+    text-align: center;
+    padding: 0.25rem 0;
+}
+
+.product-image-container{
+    
+    max-width: 100%;
+    height: auto;
+}
 
 
 
