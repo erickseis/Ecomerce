@@ -26,7 +26,6 @@ body{
 
 
 header{
-    background-color: white;
     position: fixed;
     width: 100%;
     top: 0;
@@ -34,7 +33,9 @@ header{
     z-index: 20;
 }
 
-
+header.scroll-header{
+    background-color: var(--container-color);
+}
 
 .contenedor-nav{
     display: flex;

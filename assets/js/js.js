@@ -12,3 +12,15 @@ cartIcon.addEventListener("click", () =>{
 cartClose.addEventListener("click", () =>{
     cartOverlay.classList.remove("mostrar")
 })
+
+/*Scroll de la navegacion*/
+
+let header = document.querySelector("header")
+
+window.addEventListener("scroll", () =>{
+    if( window.scrollY > 60 ){
+        header.classList.add("scroll-header")
+    }else{
+        header.classList.remove("scroll-header")
+    }
+})
