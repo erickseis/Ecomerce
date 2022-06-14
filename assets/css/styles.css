@@ -136,9 +136,12 @@ input#menu-hamburguesa ~ ul{
 
 
   header{
-    background-color: white;
-    position: relative;
+    position: fixed;
            }
+
+ header.scroll-header{
+    background-color: var(--container-color);
+      }
 
 
 .contenedor1{
