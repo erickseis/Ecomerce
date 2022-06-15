@@ -42,8 +42,6 @@ let cartOverlay = document.querySelector(".shopping-cart-overlay")
 let cartClose = document.getElementById("cart-close")
 let listProducts = document.querySelector(".products-list")
 let cartContainer = document.querySelector(".cart-list")
-
-
 let cartCount = document.querySelector("#cart-count")
 let cart = []
 
@@ -170,8 +168,8 @@ mostrarProductosCart()
 
 function mostrarProductosCart(){
 let fragmentoHTML = ``
-//let suma = 0
-//let cantidadTotal = 0
+let suma = 0
+let cantidadTotal = 0
 
 cart.forEach(item => {
 
@@ -181,9 +179,9 @@ cart.forEach(item => {
     <p>${item.name}</p> 
     <small>Cantidad:${item.quantitySelected}</small>
   </div> 
-    `   })//
+    `   
 
-/*
+
     let totalProducto = item.quantitySelected * item.price
     suma += totalProducto
 
@@ -192,11 +190,13 @@ cart.forEach(item => {
 })
 
 fragmentoHTML += `
-    <div class="cart-price">
-        <p>Productos seleccionados:${ cantidadTotal }</p>
+    <div >
+    <br>
+    <br>
+        <p>Productos seleccionados = ${cantidadTotal}</p>
         <p>$${ suma }</p>
     </div>
-    `*/
+    `
     cartContainer.innerHTML = fragmentoHTML
-    //cartCount.textContent = cantidadTotal
+    cartCount.textContent = cantidadTotal
 }
