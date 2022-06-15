@@ -7,7 +7,7 @@
     <title>Ecomerce</title>
 
     <link rel="stylesheet" href="./assets/css/styles.css">
-
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
 </head>
@@ -20,7 +20,9 @@
 
         <input type="checkbox" id="menu-hamburguesa" checked> <!--se necesita en este orden para poder ejecutar-->
            <label for="menu-hamburguesa">
-               <img class="moon" src="./assets/images/moon.png" alt="">
+            <div class="modo-oscuro">
+            <i class='bx bx-moon bx-sm' id="theme-toggler"></i>
+          </div>
                
                <div class="cart">
                <img  class="shopping" id="shopping-cart-icon" src="./assets/images/shopping-bag.png" alt=""> 
@@ -46,8 +48,8 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum cupiditate, odio <br> doloribus sed laudantium debitis unde dolor.</p>
             <p2> <strong> $14.00 </strong></p2>
             <br>
-            <button class="boton-restar">-</button>
-            <button class="boton-sumar" >+</button>
+            <button class="boton-restar"> <a href="https://es.wikipedia.org/wiki/Su%C3%A9ter"> <strong>?</strong> </a></button>
+            <button class="boton-sumar" > <a href="#sueter"> + </a></button>
         </div>
 
         <div class="hijo1">
@@ -76,10 +78,10 @@
         
         <section >
             <div class="products-container">
-
+              <a id="sueter"> </a>
             
             <div class="products-list">
-                
+             
             </div>
           </div>
         </section>

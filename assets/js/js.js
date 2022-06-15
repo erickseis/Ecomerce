@@ -1,5 +1,24 @@
 "use strict"
 
+let cart = []
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    if(localStorage.getItem("cart")){
+        cart = JSON.parse(localStorage.getItem("cart"))
+        mostrarProductosCart()
+    }
+})
+
+/*
+console.log(window.localStorage.getItem("cart"))
+if(JSON.parse(window.localStorage.getItem("cart") != null)){
+    cart = window.localStorage.getItem("cart")
+
+      
+}*/
+ /*si existe el contador en el local sera distinto de cero, sino existe entncs estara en cero*/
+ //window.localStorage.setItem( "cart", JSON.stringify(cart) )
+
 
 const items = [
     {
@@ -43,7 +62,9 @@ let cartClose = document.getElementById("cart-close")
 let listProducts = document.querySelector(".products-list")
 let cartContainer = document.querySelector(".cart-list")
 let cartCount = document.querySelector("#cart-count")
-let cart = []
+let themeIcon = document.getElementById("theme-toggler")
+let body = document.querySelector("body")
+
 
 
 
@@ -93,6 +114,9 @@ function mostrarProductos() {
 </button>
 </div>
         `
+
+        
+
     } )
     listProducts.innerHTML = fragmentHTML
 
@@ -194,9 +218,28 @@ fragmentoHTML += `
     <br>
     <br>
         <p>Productos seleccionados = ${cantidadTotal}</p>
-        <p>Total $${ suma }</p>
+        <p><strong>Total $${ suma }</strong></p>
+        
     </div>
+    <div class="contenedor-boton-comprar">
+    <button class="boton-dos"><span>Comprar</span></button> </div>
     `
+    localStorage.setItem("cart", JSON.stringify(cart))
     cartContainer.innerHTML = fragmentoHTML
     cartCount.textContent = cantidadTotal
 }
+
+/*modo oscuro*/
+
+themeIcon.addEventListener( "click", (e) =>{
+    body.classList.toggle("dark-theme")
+    
+    let isDark = body.classList.contains("dark-theme")
+
+    if(isDark){
+        themeIcon.classList.replace("bx-moon", "bx-sun")
+    }else{
+        themeIcon.classList.replace("bx-sun", "bx-moon")
+    }
+})
+
