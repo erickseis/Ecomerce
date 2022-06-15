@@ -12,7 +12,7 @@ const items = [
     },
     {
       id: 2,
-      name: 'Shirts',
+      name: 'Sueteres',
       price: 24.00,
       image: 'https://academlo-store.netlify.app/assets/img/featured2.png',
       category: 'shirts',
@@ -41,7 +41,13 @@ let cartIcon = document.querySelector(".cart")
 let cartOverlay = document.querySelector(".shopping-cart-overlay")
 let cartClose = document.getElementById("cart-close")
 let listProducts = document.querySelector(".products-list")
+let cartContainer = document.querySelector(".cart-list")
+let cartCount = document.querySelector("#cart-count")
 let cart = []
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", () =>{
     mostrarProductos()
@@ -81,7 +87,7 @@ function mostrarProductos(params) {
     <div class="product-image-container">
         <img src="${product.image}" alt="">
     </div>
-    <p>$${product.price}</p>
+    <p><strong>$${product.price}</strong></p>
     <span>Stock ${product.quantity}</span>
     <button data-id="${product.id}" class="product-button">
     <i class='bx bx-plus-circle bx-md'></i>
@@ -104,10 +110,90 @@ function mostrarProductos(params) {
 
           })
 
-          cart.push(product)
-          console.log((cart))
-
+          /*----------------------- falta codigo*/ 
+        agregarProducto(cart)
+          //cart.push(product)
+          //console.log((cart))
         })
     })
+}
 
+/*
+[ 
+    {
+        id:2,
+        quantitySelected: 1,
+
+    },
+]
+*/
+/*
+verificar si ya existe en el carrito
+    si exite
+    -verificar el stock
+     sumar 1 -- quantitySelected += 1
+     si no existe
+    creo la propiedad y asigno valor inicial 1
+
+*/
+
+function agregarProducto( producto ){
+   let resultadoFind = cart.find(item=>item.id === producto.id)
+   if( resultadoFind ){
+    
+    let quantity = cart[resultadoFind.index].quantity
+    let quantitySelected = cart[resultadoFind.index].quantitySelected
+    
+    if( stock > quantitySelected ){
+        cart[resultadoFind.index].quantitySelected += 1
+    }else{
+        alert("no tenemos suficiente inventario")
+    }
+
+    cart[resultadoFind.index].quantitySelected +=1
+   }
+else{
+    producto.quantitySelected = 1
+    producto.index = cart.length
+
+    cart.push(producto)
+
+}
+
+console.log(cart)
+}
+
+
+function mostrarProductosCart(){
+let fragmentoHTML = ``
+let suma = 0
+let cantidadTotal = 0
+
+cart.forEach(item => {
+
+    fragmentoHTML += `
+    <div class="item">
+    <img src=${item.image} alt="">
+    <p>${item.name}</p>
+    <small>Cantidad:${item.quantitySelected}</small>
+  </div>
+    `
+
+    let totalProducto = item.quantitySelected * item.price
+    suma += totalProducto
+
+    cantidadTotal += item.quantitySelected
+
+})
+
+fragmentoHTML += `
+    <div>
+          <p>Productos seleccionados${cantidadTotal}}</p>
+          <p>${suma}}</p>
+    </div>
+`
+
+
+cartContainer.innerHTML = fragmentoHTML
+cartCount.textContent = cantidadTotal
 }
