@@ -139,7 +139,7 @@ verificar si ya existe en el carrito
 function agregarProducto( producto ){
 
    let resultadoFind = cart.find(item=>item.id === producto.id)
-   //resultadoFind = "actualizacion"
+  
    if( resultadoFind ){
         let stock = cart[resultadoFind.index].quantity
         let quantitySelected = cart[resultadoFind.index].quantitySelected
@@ -190,11 +190,11 @@ cart.forEach(item => {
 })
 
 fragmentoHTML += `
-    <div >
+    <div class="cart-price">
     <br>
     <br>
         <p>Productos seleccionados = ${cantidadTotal}</p>
-        <p>$${ suma }</p>
+        <p>Total $${ suma }</p>
     </div>
     `
     cartContainer.innerHTML = fragmentoHTML
